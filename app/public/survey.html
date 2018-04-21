@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Add a Friend</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center">
+        <span class="glyphicon glyphicon-user"></span> Parker's Friend Finder</h1>
+    </div>
+
+    <!-- FORM START -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">Fill out the survey below to see if you qualify for friendship</h4>
+      </div>
+
+      <div class="panel-body">
+        <form role="form">
+          <h3>
+            <strong>Name (Required)</strong>
+          </h3>
+          <input type="text" id="friend-name" class="form-control" required>
+
+          <h3>
+            <strong>Link to Photo Image (Required)</strong>
+          </h3>
+          <input type="text" id="photo-image" class="form-control" required>
+
+          <h3>
+            <strong>Question 1</strong>
+          </h3>
+          <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+          <select name="question-1" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 2</strong>
+          </h3>
+          <h4>You like to play Xbox</h4>
+          <select name="question-2" id="q2">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 3</strong>
+          </h3>
+          <h4>You like to go Fast!</h4>
+          <select name="question-3" id="q3">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 4</strong>
+          </h3>
+          <h4>You enjoy playing Golf</h4>
+          <select name="question-4" id="q4">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 5</strong>
+          </h3>
+          <h4>You move fast and break things.</h4>
+          <select name="question-5" id="q5">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 6</strong>
+          </h3>
+          <h4>Rubix Cubes?</h4>
+          <select name="question-6" id="q6">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 7</strong>
+          </h3>
+          <h4>You like to Longboard</h4>
+          <select name="question-7" id="q7">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 8</strong>
+          </h3>
+          <h4>Fishing is fun!</h4>
+          <select name="question-8" id="q8">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 9</strong>
+          </h3>
+          <h4>You are Entrepreneurial minded</h4>
+          <select name="question-9" id="q9">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3>
+            <strong>Question 10</strong>
+          </h3>
+          <h4>Bitcoin?</h4>
+          <select name="question-10" id="q10">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <!-- SUBMIT BUTTON -->
+          <button type="submit" class="btn btn-primary submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    Footer content
+  </footer>
+
+  <!-- FRIEND SCORE MODAL -->
+  <div id="ansModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">
+            <strong>This is your best match</strong>
+          </h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SCRIPT-->
+  <script type="text/javascript">
+    console.log("survey.html script has been logged to the console!");
+
+    $('button.submit').on('click', function (event) {
+      event.preventDefault();
+      console.log(newFriend);
+
+      function surveyAns() {
+        var isValid = true;
+        $(".form-control").each(function () {
+          if ($(this).value() === "")
+            isValid = false;
+        });
+
+        if (surveyAns() === true) {
+          var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+              $('#q1').val(),
+              $('#q2').val(),
+              $('#q3').val(),
+              $('#q4').val(),
+              $('#q5').val(),
+              $('#q6').val(),
+              $('#q7').val(),
+              $('#q8').val(),
+              $('#q9').val(),
+              $('#q10').val()
+            ]
+          };
+          console.log(newFriend);
+
+          // AJAX //
+          //AJAX post to send newFriend to API
+          //returns and displays best match on page
+          $.post("api/friends", newFriend).then(function (data) {
+            console.log(data);
+            $("#matchName").text(data.name);
+            $("#matchImg").attr("src", data.photo);
+            $("ansModal").modal();
+          });
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
