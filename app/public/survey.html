@@ -4,8 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Add a Friend</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -195,55 +201,56 @@
       </div>
     </div>
   </div>
+</body>
+</html>
 
+<!-- SCRIPT-->
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  console.log("survey.html script has been logged to the console!");
 
-  <!-- SCRIPT-->
-  <script type="text/javascript">
-    console.log("survey.html script has been logged to the console!");
-
-    $('button.submit').on('click', function (event) {
-      event.preventDefault();
-      console.log(newFriend);
-
-      function surveyAns() {
-        var isValid = true;
-        $(".form-control").each(function () {
-          if ($(this).value() === "")
-            isValid = false;
-        });
-
-        if (surveyAns() === true) {
-          var newFriend = {
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
-            scores: [
-              $('#q1').val(),
-              $('#q2').val(),
-              $('#q3').val(),
-              $('#q4').val(),
-              $('#q5').val(),
-              $('#q6').val(),
-              $('#q7').val(),
-              $('#q8').val(),
-              $('#q9').val(),
-              $('#q10').val()
-            ]
-          };
-          console.log(newFriend);
-
-          // AJAX //
-          //AJAX post to send newFriend to API
-          //returns and displays best match on page
-          $.post("api/friends", newFriend).then(function (data) {
+  $('button.submit').on('click', function (event) {
+    event.preventDefault();
+    // console.log(newFriend);
+      var isValid = true;
+      $(".form-control").each(function () {
+        if ($(this).val() === "")
+          isValid = false;
+      });
+      if (isValid === true) {
+        // Here we grab the form elements
+        var newFriend = {
+          name: $("#friend-name").val().trim(),
+          photo: $("#photo-image").val().trim(),
+          scores: [
+            $('#q1').val(),
+            $('#q2').val(),
+            $('#q3').val(),
+            $('#q4').val(),
+            $('#q5').val(),
+            $('#q6').val(),
+            $('#q7').val(),
+            $('#q8').val(),
+            $('#q9').val(),
+            $('#q10').val()
+          ]
+        };
+        console.log(newFriend);
+        // AJAX //
+        //AJAX post to send newFriend to API
+        //returns and displays best match on page
+        $.post("api/friends", newFriend,
+          function (data) {
             console.log(data);
             $("#matchName").text(data.name);
             $("#matchImg").attr("src", data.photo);
-            $("ansModal").modal();
+            $("#ansModal").modal();
           });
-        }
       }
-    })
-  </script>
-</body>
-
-</html>
+    
+  })
+</script>

@@ -1,3 +1,10 @@
+// ===============================================================================
+// DATA
+// Below data will hold all of the friendsSurvey scores
+// Initially we just set it equal to the default friends below.
+// But you could have it be an empty array as well.
+// ===============================================================================
+
 var friendsArray = [{
     "name": "Ahmed",
     "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
@@ -48,4 +55,5 @@ var friendsArray = [{
   }
 ];
 
+// Export the array. This makes it accessible to other files using require.
 module.exports = friendsArray;
